@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.2.xsd">
+    <changeSet author="luciano (generated)" id="1499921733621-1">
+        <createSequence sequenceName="alergia_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-2">
+        <createSequence sequenceName="contato_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-3">
+        <createSequence sequenceName="creche_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-4">
+        <createSequence sequenceName="crianca_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-5">
+        <createSequence sequenceName="endereco_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-6">
+        <createSequence sequenceName="familia_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-7">
+        <createSequence sequenceName="hibernate_sequence"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-8">
+        <createSequence sequenceName="medicamento_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-9">
+        <createSequence sequenceName="pessoa_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-10">
+        <createSequence sequenceName="usuario_id_seq"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-11">
+        <createTable tableName="alergia">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="descricao" type="VARCHAR(60)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-12">
+        <createTable tableName="contato">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fone_outro" type="VARCHAR(20)"/>
+            <column name="fone_principal" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="responsavel" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-13">
+        <createTable tableName="creche">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-14">
+        <createTable tableName="crianca">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dt_nascimento" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="foto" type="VARCHAR(255)"/>
+            <column name="matricula" type="VARCHAR(10)"/>
+            <column name="nome" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sexo" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="contato_id" type="INT8"/>
+            <column name="endereco_id" type="INT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-15">
+        <createTable tableName="crianca_alergia">
+            <column name="id_crianca" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_alergia" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-16">
+        <createTable tableName="crianca_creche">
+            <column name="id_crianca" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_creche" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-17">
+        <createTable tableName="crianca_medicamento">
+            <column name="id_crianca" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_medicamento" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-18">
+        <createTable tableName="endereco">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cep" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="localizacao" type="VARCHAR(120)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="logradouro" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-19">
+        <createTable tableName="familia">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-20">
+        <createTable tableName="hibernate_sequences">
+            <column name="sequence_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sequence_next_hi_value" type="INT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-21">
+        <createTable tableName="medicamento">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="dosagem" type="VARCHAR(25)"/>
+            <column name="dt_final" type="BYTEA"/>
+            <column name="intervalo_horas" type="VARCHAR(10)"/>
+            <column name="nome" type="VARCHAR(40)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-22">
+        <createTable tableName="pessoa">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_endereco" type="INT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-23">
+        <createTable tableName="usuario">
+            <column name="id" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ativo" type="BOOL">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telefone" type="VARCHAR(20)"/>
+            <column name="tipo" type="VARCHAR(8)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id_pessoa" type="INT8">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-24">
+        <addPrimaryKey columnNames="id" constraintName="alergia_pkey" tableName="alergia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-25">
+        <addPrimaryKey columnNames="id" constraintName="contato_pkey" tableName="contato"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-26">
+        <addPrimaryKey columnNames="id" constraintName="creche_pkey" tableName="creche"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-27">
+        <addPrimaryKey columnNames="id_crianca, id_alergia" constraintName="crianca_alergia_pkey" tableName="crianca_alergia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-28">
+        <addPrimaryKey columnNames="id_crianca, id_creche" constraintName="crianca_creche_pkey" tableName="crianca_creche"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-29">
+        <addPrimaryKey columnNames="id_crianca, id_medicamento" constraintName="crianca_medicamento_pkey" tableName="crianca_medicamento"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-30">
+        <addPrimaryKey columnNames="id" constraintName="crianca_pkey" tableName="crianca"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-31">
+        <addPrimaryKey columnNames="id" constraintName="endereco_pkey" tableName="endereco"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-32">
+        <addPrimaryKey columnNames="id" constraintName="familia_pkey" tableName="familia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-33">
+        <addPrimaryKey columnNames="sequence_name" constraintName="hibernate_sequences_pkey" tableName="hibernate_sequences"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-34">
+        <addPrimaryKey columnNames="id" constraintName="medicamento_pkey" tableName="medicamento"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-35">
+        <addPrimaryKey columnNames="id" constraintName="pessoa_pkey" tableName="pessoa"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-36">
+        <addPrimaryKey columnNames="id" constraintName="usuario_pkey" tableName="usuario"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-37">
+        <addUniqueConstraint columnNames="email" constraintName="uk_5171l57faosmj8myawaucatdw" deferrable="false" disabled="false" initiallyDeferred="false" tableName="usuario"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-38">
+        <addUniqueConstraint columnNames="id_medicamento" constraintName="uk_5vrdvhuiv8efv48i5qp45yq5r" deferrable="false" disabled="false" initiallyDeferred="false" tableName="crianca_medicamento"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-39">
+        <addUniqueConstraint columnNames="id_pessoa" constraintName="uk_8sb7v86sybrbiomb6h3klfg3o" deferrable="false" disabled="false" initiallyDeferred="false" tableName="creche"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-40">
+        <addUniqueConstraint columnNames="id_alergia" constraintName="uk_9t2l42dols58dik73l818thqy" deferrable="false" disabled="false" initiallyDeferred="false" tableName="crianca_alergia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-41">
+        <addUniqueConstraint columnNames="id_pessoa" constraintName="uk_c60aycb1oeb59bm7wth7gs8un" deferrable="false" disabled="false" initiallyDeferred="false" tableName="familia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-42">
+        <addForeignKeyConstraint baseColumnNames="id_alergia" baseTableName="crianca_alergia" constraintName="fk_alergia" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="alergia"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-43">
+        <addForeignKeyConstraint baseColumnNames="contato_id" baseTableName="crianca" constraintName="fk_contato" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="contato"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-44">
+        <addForeignKeyConstraint baseColumnNames="id_creche" baseTableName="crianca_creche" constraintName="fk_creche" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="creche"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-45">
+        <addForeignKeyConstraint baseColumnNames="id_crianca" baseTableName="crianca_alergia" constraintName="fk_crianca" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="crianca"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-46">
+        <addForeignKeyConstraint baseColumnNames="id_endereco" baseTableName="pessoa" constraintName="fk_endereco" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="endereco"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-47">
+        <addForeignKeyConstraint baseColumnNames="id_medicamento" baseTableName="crianca_medicamento" constraintName="fk_medicamento" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="medicamento"/>
+    </changeSet>
+    <changeSet author="luciano (generated)" id="1499921733621-48">
+        <addForeignKeyConstraint baseColumnNames="id_pessoa" baseTableName="usuario" constraintName="fk_pessoa" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="pessoa"/>
+    </changeSet>
+</databaseChangeLog>
