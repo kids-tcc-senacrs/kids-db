@@ -7,7 +7,19 @@
 	
 	<changeSet author="ortiz" id="000" runAlways="true">
 		<sql>
+			DELETE FROM hibernate_sequences;
 			DELETE FROM DATABASECHANGELOG;
+			DELETE FROM CRIANCA_MEDICAMENTO;
+			DELETE FROM CRIANCA_ALERGIA;
+	        DELETE FROM FAMILIA;
+			DELETE FROM CRIANCA;
+	        DELETE FROM CRECHE;
+			DELETE FROM MEDICAMENTO;
+			DELETE FROM ALERGIA;
+	        DELETE FROM ENDERECO;
+			DELETE FROM CONTATO;
+	        DELETE FROM USUARIO;
+			DELETE FROM PESSOA;
 		</sql>
     </changeSet>
     
