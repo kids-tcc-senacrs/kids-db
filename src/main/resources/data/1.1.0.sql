@@ -21,3 +21,6 @@ INSERT INTO ALERGIA(id,descricao) VALUES(4,'dipirona');
 INSERT INTO CRIANCA_MEDICAMENTO(id_crianca,id_medicamento) VALUES(2,2);
 INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(2,3);
 INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(2,4);
+
+--CRIANCAS DO FAMILIAR
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia) VALUES(1,1,1)
