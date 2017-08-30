@@ -40,5 +40,44 @@ INSERT INTO CRIANCA_MEDICAMENTO(id_crianca,id_medicamento) VALUES(2,2);
 INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(2,3);
 INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(2,4);
 
+-- CRIANCA 3
+INSERT INTO PESSOA (id, nome) VALUES(6, 'Rafaela Farias');
+INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(6, 6, '91150000', 'Rubem Berta, Porto Alegre - RS, 91130-001, Brasil', 'Rua Baltazar de Oliveira Garcia, 9999');
+INSERT INTO CONTATO(id,email,fone_outro,fone_principal,responsavel) VALUES(3,'lizianeortiz@gmail.com','51 3333-3333', '51 95372-4454', 'Liziane Ortiz Silva');
+INSERT INTO CRIANCA(id,dt_nascimento,foto,matricula,sexo,contato_id,creche_id,pessoa_id) VALUES(3,'2014-08-28 00:00:00.000-00',null,'0003','FEMININO',3,1,6);
+INSERT INTO MEDICAMENTO(id,dosagem,dt_final,intervalo_horas,nome) VALUES(3,'2 comprimido / 100gr','2017-12-23 00:00:00.000-00','a cada 12h','melhoral infantil');
+INSERT INTO ALERGIA(id,descricao) VALUES(5,'chocolate em pó');
+INSERT INTO ALERGIA(id,descricao) VALUES(6,'dipirona');
+INSERT INTO CRIANCA_MEDICAMENTO(id_crianca,id_medicamento) VALUES(3,3);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(3,5);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(3,6);
+
+-- CRIANCA 4
+INSERT INTO PESSOA (id, nome) VALUES(7, 'Amanda Silva');
+INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(7, 7, '91150000', 'Rubem Berta, Porto Alegre - RS, 91130-001, Brasil', 'Rua Baltazar de Oliveira Garcia, 9999');
+INSERT INTO CONTATO(id,email,fone_outro,fone_principal,responsavel) VALUES(4,'lizianeortiz@gmail.com','51 3333-3333', '51 95372-4454', 'Liziane Ortiz Silva');
+INSERT INTO CRIANCA(id,dt_nascimento,foto,matricula,sexo,contato_id,creche_id,pessoa_id) VALUES(4,'2014-08-28 00:00:00.000-00',null,'0004','FEMININO',4,1,7);
+INSERT INTO MEDICAMENTO(id,dosagem,dt_final,intervalo_horas,nome) VALUES(4,'2 comprimido / 100gr','2017-12-23 00:00:00.000-00','a cada 12h','melhoral infantil');
+INSERT INTO ALERGIA(id,descricao) VALUES(7,'chocolate em pó');
+INSERT INTO ALERGIA(id,descricao) VALUES(8,'dipirona');
+INSERT INTO CRIANCA_MEDICAMENTO(id_crianca,id_medicamento) VALUES(4,4);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(4,7);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(4,8);
+
+-- CRIANCA 5
+INSERT INTO PESSOA (id, nome) VALUES(8, 'Sheldon Cooper');
+INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(8, 8, '91150000', 'Rubem Berta, Porto Alegre - RS, 91130-001, Brasil', 'Rua Baltazar de Oliveira Garcia, 9999');
+INSERT INTO CONTATO(id,email,fone_outro,fone_principal,responsavel) VALUES(5,'lizianeortiz@gmail.com','51 3333-3333', '51 95372-4454', 'Liziane Ortiz Silva');
+INSERT INTO CRIANCA(id,dt_nascimento,foto,matricula,sexo,contato_id,creche_id,pessoa_id) VALUES(5,'2014-08-28 00:00:00.000-00',null,'0005','MASCULINO',5,1,8);
+INSERT INTO MEDICAMENTO(id,dosagem,dt_final,intervalo_horas,nome) VALUES(5,'2 comprimido / 100gr','2017-12-23 00:00:00.000-00','a cada 12h','melhoral infantil');
+INSERT INTO ALERGIA(id,descricao) VALUES(9,'chocolate em pó');
+INSERT INTO ALERGIA(id,descricao) VALUES(10,'dipirona');
+INSERT INTO CRIANCA_MEDICAMENTO(id_crianca,id_medicamento) VALUES(5,5);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(5,9);
+INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(5,10);
+
+
 --CRIANCAS DO FAMILIAR
-INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, parentesco, dt_vinculo,familiar_notificado) VALUES(1,1,1,'PAI','2011-08-29 00:00:00.000-00',false)
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(1,1,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(2,3,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(3,4,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
