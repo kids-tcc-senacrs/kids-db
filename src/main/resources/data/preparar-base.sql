@@ -1,8 +1,14 @@
---USUARIO FAMILIAR
-INSERT INTO PESSOA (id, nome) VALUES(1, 'Usuario Familiar Fake');
+--USUARIO FAMILIAR 1
+INSERT INTO PESSOA (id, nome) VALUES(1, 'Usuario Familiar Fake 01');
 INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(1, 1, '91720090', 'Glória, Porto Alegre - RS, 91720-090, Brasil', 'Rua Professor Carvalho de Freitas 115');
 INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(1, 1, 'kidsusuariofamiliar@gmail.com', '51 9 8888-7777', 'FAMILIAR', true);
 INSERT INTO FAMILIA(id, id_pessoa) values(1,1);
+
+--USUARIO FAMILIAR 2
+INSERT INTO PESSOA (id, nome) VALUES(9, 'Usuario Familiar Fake 02');
+INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(9, 9, '91720090', 'Glória, Porto Alegre - RS, 91720-090, Brasil', 'Rua Professor Carvalho de Freitas 115');
+INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(4, 9, 'kidsusuariofamiliar2@gmail.com', '51 9 8888-7777', 'FAMILIAR', true);
+INSERT INTO FAMILIA(id, id_pessoa) values(2,9);
 
 --CRECHE 1
 INSERT INTO PESSOA (id, nome) VALUES(2, 'Usuario Creche Fake');
@@ -81,3 +87,21 @@ INSERT INTO CRIANCA_ALERGIA(id_crianca,id_alergia) VALUES(5,10);
 INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(1,1,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
 INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(2,3,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
 INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(3,4,1,1,'PAI','2011-08-29 00:00:00.000-00',true, false);
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(4,3,2,4,'TIO','2011-08-29 00:00:00.000-00',true, false);
+INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(5,4,2,4,'TIO','2011-08-29 00:00:00.000-00',true, false);
+
+
+--EVENTOS
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(1, 2, 'Dia das crianças', '2018-10-12 16:30:00.000-00', 'PREVISTO', 'Cada criança deverá trazer 1 pote de salgados');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(2, 1, 'Dia das bruxas', '2018-08-31 17:00:00.000-00', 'PREVISTO', 'Cada criança deverá vir fantasiada a caráter');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(3, 2, 'Festa de Natal', '2017-12-15 12:00:00.000-00', 'PREVISTO', 'Todas as crianças irão participar do amigo secreto. cada uma deverá trazer um presente de R$5.00 a R$10.00');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(4, 1, 'Dia do índio', '2018-04-19 14:30:00.000-00', 'PREVISTO', 'Todas as crianças deverão comparecer com um penacho na cabeça');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(5, 2, 'Festa junina', '2017-06-24 19:00:00.000-00', 'PREVISTO', 'Cada criança deverá trazer 4 litros de refrigerante');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(6, 1, 'Teatro de fantoches', '2017-12-05 09:30:00.000-00', 'PREVISTO', 'Cada criança deverá trazer 1 brinquedo para doação');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(7, 2, 'Festa de fim de ano', '2017-12-20 10:00:00.000-00', 'PREVISTO', 'Todas as crianças deverão vir vestidas de branco');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(8, 1, 'Festa de verão', '2017-01-10 08:00:00.000-00', 'REALIZADO', 'Todas as crianças deverão vir de trajes curtos');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(9, 2, 'Dia do vampiro', '2018-12-29 23:00:00.000-00', 'CANCELADO', 'Todas as crianças deverão vir fantasiados de vampiros');
+
+--EVENTO RESPOSTA
+INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta, status) VALUES (1, 4, 3, 4, '2017-06-01 11:27:00', 'CONFIRMADO');
+INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta, status) VALUES (2, 4, 4, 4, '2017-07-02 16:41:00', 'REJEITADO');

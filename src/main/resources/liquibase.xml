@@ -8,6 +8,8 @@
 	<changeSet author="ortiz" id="000" runAlways="true">
 		<sql>
 			DELETE FROM DIARIO;
+			DELETE FROM EVENTO_RESPOSTA;
+			DELETE FROM EVENTO;
 			DELETE FROM CRIANCA_MEDICAMENTO;
 			DELETE FROM CRIANCA_ALERGIA;
 			DELETE FROM CRIANCA_FAMILIA;
@@ -29,25 +31,20 @@
     
     <changeSet author="ortiz" id="init_sequences" runAlways="true">
 		<sql>
-			
-			
 			delete  from databasechangelog;
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('usuario', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('familia', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('creche', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('crianca', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('contato', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('pessoa', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('alergia', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('medicamento', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('endereco', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('crianca_familia', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('diario', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('evento', 100);
 		</sql>
     </changeSet>
     
 </databaseChangeLog>
-
-<!-- 
-DELETE FROM hibernate_sequences;
-INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('usuario', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('familia', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('creche', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('crianca', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('contato', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('pessoa', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('alergia', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('medicamento', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('endereco', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('crianca_familia', 100);
-			INSERT INTO hibernate_sequences(sequence_name, sequence_next_hi_value) VALUES('diario', 100);
- -->
