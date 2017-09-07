@@ -100,7 +100,7 @@ INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES
 INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(6, 1, 'Teatro de fantoches', '2017-12-05 09:30:00.000-00', 'PREVISTO', 'Cada criança deverá trazer 1 brinquedo para doação');
 INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(7, 2, 'Festa de fim de ano', '2017-12-20 10:00:00.000-00', 'PREVISTO', 'Todas as crianças deverão vir vestidas de branco');
 INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(8, 1, 'Festa de verão', '2017-01-10 08:00:00.000-00', 'REALIZADO', 'Todas as crianças deverão vir de trajes curtos');
-INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(9, 2, 'Dia do vampiro', '2018-12-29 23:00:00.000-00', 'CANCELADO', 'Todas as crianças deverão vir fantasiados de vampiros');
+INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(9, 1, 'Dia do vampiro', '2018-12-29 23:00:00.000-00', 'CANCELADO', 'Todas as crianças deverão vir fantasiados de vampiros');
 
 --EVENTO RESPOSTA
 INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta, status) VALUES (1, 4, 3, 4, '2017-06-01 11:27:00', 'CONFIRMADO');
