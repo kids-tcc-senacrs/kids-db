@@ -8,6 +8,7 @@
 	<changeSet author="ortiz" id="000" runAlways="true">
 		<sql>
 			DELETE FROM DIARIO;
+			DELETE FROM AVISO;
 			DELETE FROM EVENTO_RESPOSTA;
 			DELETE FROM EVENTO;
 			DELETE FROM CRIANCA_MEDICAMENTO;
@@ -44,6 +45,7 @@
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('crianca_familia', 100);
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('diario', 100);
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('evento', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('aviso', 100);
 		</sql>
     </changeSet>
     
