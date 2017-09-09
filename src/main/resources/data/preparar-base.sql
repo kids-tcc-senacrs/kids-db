@@ -11,7 +11,7 @@ INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(4, 9, 'k
 INSERT INTO FAMILIA(id, id_pessoa) values(2,9);
 
 --CRECHE 1
-INSERT INTO PESSOA (id, nome) VALUES(2, 'Usuario Creche Fake');
+INSERT INTO PESSOA (id, nome) VALUES(2, 'Creche Vivendo e Aprendendo');
 INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(2, 2, '91720090', 'Azenha, Porto Alegre - RS, 99234-090, Brasil', 'Rua Abc, 3728');
 INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(2, 2, 'lucianoortizsilva@gmail.com', '51 9 8291-2222', 'CRECHE', true);
 INSERT INTO CRECHE(id, id_pessoa) values(1,2);
@@ -90,6 +90,13 @@ INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, 
 INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(4,3,2,4,'TIO','2011-08-29 00:00:00.000-00',true, false);
 INSERT INTO CRIANCA_FAMILIA(id, id_crianca, id_familia, id_usuario, parentesco, dt_vinculo, ativo, familiar_notificado) VALUES(5,4,2,4,'TIO','2011-08-29 00:00:00.000-00',true, false);
 
+--DIARIO
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES (1,now(),'POUCO', 'REFEICAO_CAFE_MANHA', 1, 1);
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES(2,now(),'NORMAL', 'REFEICAO_ALMOCO', 1, 1);
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES(3,now(),'MUITO', 'REFEICAO_CAFE_TARDE', 1, 1);
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES(4,now(),'POUCO', 'REFEICAO_JANTA', 1, 1);
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES(5,now(),'NORMAL', 'EVACUACAO', 1, 1);
+INSERT INTO DIARIO(id,dt_lancamento,nota,tipo,id_creche,id_crianca)VALUES(6,now(),'MUITO', 'SONO', 1, 1);
 
 --EVENTOS
 INSERT INTO EVENTO(id, id_creche, nome, dt_realizacao, status, descricao) VALUES(1, 2, 'Dia das crianças', '2018-10-12 16:30:00.000-00', 'PREVISTO', 'Cada criança deverá trazer 1 pote de salgados');
@@ -107,6 +114,6 @@ INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta,
 INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta, status) VALUES (2, 4, 4, 4, '2017-07-02 16:41:00', 'REJEITADO');
 
 --AVISO
-INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, origem) VALUES(1,1,'Não haverá aula no dia 12/12/12. Motivo: Limpeza da caixa de água','2017-12-12 23:59:59','AVISO');
-INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, origem) VALUES(2,1,'Todos os alunos deverão comprarecer 1h antes do inicio da aula do dia 13/12/12','2017-12-13 23:59:59','AVISO');
-INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, origem) VALUES(3,1,'Evento Cancelado','2018-12-29 23:00:00.000-00','EVENTO');
+INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(1,1,'Não haverá aula no dia 12/12/12. Motivo: Limpeza da caixa de água','2017-12-12 23:59:59','INFORMACAO');
+INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(2,2,'Todos os alunos deverão comprarecer 1h antes do inicio da aula do dia 13/12/12','2017-12-13 23:59:59','INFORMACAO');
+INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(3,1,'O Evento de final de ano previsto para 29/12/2018 está Cancelado!','2018-12-29 23:00:00.000-00','CANCELAMENTO');

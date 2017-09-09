@@ -46,6 +46,7 @@
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('diario', 100);
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('evento', 100);
 			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('aviso', 100);
+			INSERT INTO hibernate_sequences(sequence_name, next_val) VALUES('evento_resposta', 100);
 		</sql>
     </changeSet>
     
