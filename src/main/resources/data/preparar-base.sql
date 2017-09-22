@@ -1,5 +1,5 @@
 --USUARIO FAMILIAR 1
-INSERT INTO PESSOA (id, nome) VALUES(1, 'Usuario Familiar Fake 01');
+INSERT INTO PESSOA (id, nome) VALUES(1, 'Luciano Ortiz - Test');
 INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(1, 1, '91720090', 'Glória, Porto Alegre - RS, 91720-090, Brasil', 'Rua Professor Carvalho de Freitas 115');
 INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(1, 1, 'kidsusuariofamiliar@gmail.com', '51 9 8888-7777', 'FAMILIAR', true);
 INSERT INTO FAMILIA(id, id_pessoa) values(1,1);
@@ -13,7 +13,7 @@ INSERT INTO FAMILIA(id, id_pessoa) values(2,9);
 --CRECHE 1
 INSERT INTO PESSOA (id, nome) VALUES(2, 'Creche Vivendo e Aprendendo');
 INSERT INTO ENDERECO(id, id_pessoa, cep, localizacao, logradouro) VALUES(2, 2, '91720090', 'Azenha, Porto Alegre - RS, 99234-090, Brasil', 'Rua Abc, 3728');
-INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(2, 2, 'lucianoortizsilva@gmail.com', '51 9 8291-2222', 'CRECHE', true);
+INSERT INTO USUARIO(id, id_pessoa, email, telefone, tipo, ativo) VALUES(2, 2, 'kidsusuariocreche@gmail.com', '51 9 3333-4444', 'CRECHE', true);
 INSERT INTO CRECHE(id, id_pessoa) values(1,2);
 
 --CRECHE 2
@@ -117,3 +117,12 @@ INSERT INTO EVENTO_RESPOSTA (id, id_evento, id_crianca, id_usuario, dt_resposta,
 INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(1,1,'Não haverá aula no dia 12/12/12. Motivo: Limpeza da caixa de água','2017-12-12 23:59:59','INFORMACAO');
 INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(2,2,'Todos os alunos deverão comprarecer 1h antes do inicio da aula do dia 13/12/12','2017-12-13 23:59:59','INFORMACAO');
 INSERT INTO AVISO (id, id_creche, descricao, dt_expiracao, tipo) VALUES(3,1,'O Evento de final de ano previsto para 29/12/2018 está Cancelado!','2018-12-29 23:00:00.000-00','CANCELAMENTO');
+
+--COMUNICACAO SEM RESPOSTAS DA CRECHE 
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(1, false, null, 'Vocês possuem um ótimo atendimento. Parabéns!!!', current_date - 4, null, 'ELOGIO', 1, 1);
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(2, false, null, 'Tendo ligar para vocês todos os dias a tarde, mas ninguém atende o telefone!', current_date - 2, null, 'RECLAMACAO', 1, 1);
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(3, false, null, 'Seria bom se vocês servissem frutas pela manhã para as crianças!!!', current_date - 34, null, 'SUGESTAO', 1, 1);
+--COMUNICACAO COM RESPOSTAS DA CRECHE
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(4, true, 'Obrigado! Estamos sempre à disposição.', 'Vocês possuem um ótimo atendimento. Parabéns!!!', current_date - 1, current_date, 'ELOGIO', 1, 1);
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(5, true, 'Olá, desculpa, é que o telefone estava quebrado.', 'Tendo ligar para vocês todos os dias a tarde, mas ninguém atende o telefone!', current_date - 1, current_date, 'RECLAMACAO', 1, 1);
+INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(6, true, 'Olá, obrigado pela sugestão. Vamos avaliar.', 'Seria bom se vocês servissem frutas pela manhã para as crianças!!!', current_date - 1, current_date, 'SUGESTAO', 1, 1);
