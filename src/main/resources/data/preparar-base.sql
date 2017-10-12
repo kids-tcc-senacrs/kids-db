@@ -126,3 +126,68 @@ INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_famil
 INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(4, true, 'Obrigado! Estamos sempre à disposição.', 'Vocês possuem um ótimo atendimento. Parabéns!!!', current_date - 1, current_date, 'ELOGIO', 1, 1);
 INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(5, true, 'Olá, desculpa, é que o telefone estava quebrado.', 'Tendo ligar para vocês todos os dias a tarde, mas ninguém atende o telefone!', current_date - 1, current_date, 'RECLAMACAO', 1, 1);
 INSERT INTO COMUNICACAO (id, creche_respondeu, descricao_creche, descricao_familiar, dt_envio_familiar, dt_resposta_creche, tipo, id_creche, id_usuario) VALUES(6, true, 'Olá, obrigado pela sugestão. Vamos avaliar.', 'Seria bom se vocês servissem frutas pela manhã para as crianças!!!', current_date - 1, current_date, 'SUGESTAO', 1, 1);
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(1,current_date,1,1,'Seu processo de adaptação à nova turma foi tranquilo uma vez que continuou com a mesma turma e a mesma professora. Seu 
+convívio com os demais adultos presentes na escola é excelente. Relaciona-se muito bem com todos os colegas. É uma criança 
+muito tranquila, independente e criativa sendo muito organizada com seu material individual e coletivo.
+Respeita as regras e combinados (da escola e da sala de aula). Tem um ótimo comportamento. Participa de todas as atividades 
+propostas com prazer. Em alguns momentos apresenta timidez. É assídua e pontual.');
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(2,current_date - 365,1,1,'Revela habilidades motoras, coordenação motora fina, sequência lógica, percepção visual e capacidade de análise adequados à 
+sua idade.Quanto à assimilação e fixação dos conteúdos é excelente, independente e realiza todas as atividades. Apresenta atenção e 
+concentração em sala de aula e é participativa.');
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(3,current_date - 730,1,1,'Faz leitura de palavras, frases e pequenos textos assim, como o registro dos mesmos, sem auxílio da professora. Séria e 
+classifica objetos. Reconhece e registra os numerais fazendo o uso adequado dos mesmos no dia a dia.Participa com interesse dos projetos interdisciplinares, têm noção de si mesma, família, escola, alimentação e profissão');
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(4,current_date,1,2,'Seu processo de adaptação à nova turma foi tranquilo uma vez que continuou com a mesma turma e a mesma professora. Seu 
+convívio com os demais adultos presentes na escola é excelente. Relaciona-se muito bem com todos os colegas. É uma criança 
+muito tranquila, independente e criativa sendo muito organizada com seu material individual e coletivo.
+Respeita as regras e combinados (da escola e da sala de aula). Tem um ótimo comportamento. Participa de todas as atividades 
+propostas com prazer. Em alguns momentos apresenta timidez. É assídua e pontual.');
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(5,current_date - 365,1,2,'Revela habilidades motoras, coordenação motora fina, sequência lógica, percepção visual e capacidade de análise adequados à 
+sua idade.Quanto à assimilação e fixação dos conteúdos é excelente, independente e realiza todas as atividades. Apresenta atenção e 
+concentração em sala de aula e é participativa.');
+
+--AVALIACAO
+INSERT INTO AVALIACAO(id, dt_avaliacao, id_creche, id_crianca, descricao)
+VALUES(6,current_date,1,3,'Revela habilidades motoras, coordenação motora fina, sequência lógica, percepção visual e capacidade de análise adequados à 
+sua idade.Quanto à assimilação e fixação dos conteúdos é excelente, independente e realiza todas as atividades. Apresenta atenção e 
+concentração em sala de aula e é participativa.');
+
+--CARDÁPIO
+INSERT INTO CARDAPIO(id, id_creche, dt_cardapio, dia_semana)VALUES(1,1,current_date,to_char(current_date, 'day'));
+INSERT INTO CARDAPIO(id, id_creche, dt_cardapio, dia_semana)VALUES(2,1,current_date - 1,to_char(current_date - 1, 'day'));
+INSERT INTO CARDAPIO(id, id_creche, dt_cardapio, dia_semana)VALUES(3,2,current_date,to_char(current_date, 'day'));
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(1,1,'FEIJÃO');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(2,1,'ARROZ');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(3,1,'BATATA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(4,1,'SUCO DE LIMÃO');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(5,1,'CENOURA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(6,1,'CARNE');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(7,1,'LENTILHA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(8,1,'ABÓBORA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(9,1,'AIPIM');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(10,2,'ALFACE');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(11,2,'MASSA INTEGRAL');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(12,2,'RÚCULA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(13,2,'CARNE MOÍDA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(14,2,'PEIXE');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(15,2,'PERU');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(16,2,'PÃO INTEGRAL');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(17,2,'POLENTA COM MOLHO');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(18,2,'OVO');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(19,2,'MAÇA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(20,3,'CHULETA');
+INSERT INTO CARDAPIO_ALIMENTO(id, id_cardapio, nome)VALUES(21,3,'ÁGUA');
